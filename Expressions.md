@@ -2,7 +2,7 @@
 
 En JavaScript, une expression est tout ce qui peut renvoyer un résultat : 
 - un calcul
-- une fonction executée
+- une fonction exécutée
 - une comparaison ou une ternaire
 - une valeur
 

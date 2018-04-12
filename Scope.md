@@ -41,7 +41,7 @@ function grandPa() {
 
 ## Contexte
 
-On parle de **contexte** quand une fonction est executée. Chaque fonction à accès au mot-clé **this**. Ce mot peut représenter plusieurs choses en fonction de son contexte d'éxecution.
+On parle de **contexte** quand une fonction est  exécutée. Chaque fonction à accès au mot-clé **this**. Ce mot peut représenter plusieurs choses en fonction de son contexte d'éxecution.
 
 Dans chaque fonction qui n'appartiens pas à un objet (donc "method" exclus), **this** représente l'objet **window**, sauf que le contexte de la fonction est changé volontairement.
 
@@ -57,16 +57,16 @@ var woman = {
 };
 
 woman.child.hello();
-// ceci affichera "Boruto" car la "method" "hello()", est executée sur le contexte de l'objet woman.child, donc son "this" vaut "woman.child"
+// ceci affichera "Boruto" car la "method" "hello()", est  exécutée sur le contexte de l'objet woman.child, donc son "this" vaut "woman.child"
 
 var singleHello = woman.child.hello;
 // maintenant "singleHello" contient la valeur de "woman.child.hello", donc, une fonction
 
 singleHello();
-// ceci affichera "undefined" car "singleHello()" est executée sans contexte, donc son "this" c'est l'objet window. Sur l'objet window on a pas de propriété "firstname"
+// ceci affichera "undefined" car "singleHello()" est  exécutée sans contexte, donc son "this" c'est l'objet window. Sur l'objet window on a pas de propriété "firstname"
 ```
 
-A noter : même quand vous êtes dans une fonction enfant / sous-fonction, si une fonction est executée sans contexte, son "this" c'est l'objet window
+A noter : même quand vous êtes dans une fonction enfant / sous-fonction, si une fonction est  exécutée sans contexte, son "this" c'est l'objet window
 
 ### Changer de contexte
 
