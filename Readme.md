@@ -2,7 +2,7 @@
 
 - [Les expressions](Expressions.md)
 - [Scope et Contexte](Scope.md)
-- Closure et IIFE
+- [Closure et IIFE](Closure.md)
 - Prototype
 - Ajouter des fonctions aux objets natifs
 
