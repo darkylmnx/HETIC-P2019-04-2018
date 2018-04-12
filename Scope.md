@@ -1,7 +1,5 @@
 # Scope et Contexte
 
----
-
 ## Scope
 
 En JavaScript, on appele **scope** la zone où une variable / fontion est restreinte et donc, où elle existe.
@@ -57,13 +55,15 @@ var woman = {
 };
 
 woman.child.hello();
-// ceci affichera "Boruto" car la "method" "hello()", est  exécutée sur le contexte de l'objet woman.child, donc son "this" vaut "woman.child"
+// ceci affichera "Boruto" car la "method" "hello()", est 
+// exécutée sur le contexte de l'objet woman.child, donc son "this" vaut "woman.child"
 
 var singleHello = woman.child.hello;
 // maintenant "singleHello" contient la valeur de "woman.child.hello", donc, une fonction
 
 singleHello();
-// ceci affichera "undefined" car "singleHello()" est  exécutée sans contexte, donc son "this" c'est l'objet window. Sur l'objet window on a pas de propriété "firstname"
+// ceci affichera "undefined" car "singleHello()" est  exécutée sans contexte,
+// donc son "this" c'est l'objet window. Sur l'objet window on a pas de propriété "firstname"
 ```
 
 A noter : même quand vous êtes dans une fonction enfant / sous-fonction, si une fonction est  exécutée sans contexte, son "this" c'est l'objet window
