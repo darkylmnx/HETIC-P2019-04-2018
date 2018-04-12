@@ -2,9 +2,9 @@
 
 ## Scope
 
-En JavaScript, on appele **scope** la zone où une variable / fontion est restreinte et donc, où elle existe.
+En JavaScript, on appelle **scope** la zone où une variable / fonction est restreinte, et donc, où elle existe.
 
-Chaque scope est determiné par la fonction parent la plus proche.
+Chaque scope est déterminé par la fonction parent la plus proche.
 
 ```javascript
 grandPa();
@@ -33,13 +33,13 @@ function grandPa() {
 ```
 
 - Une fonction enfant a accès aux variables de toute son ascendance
-- Une fonction parent n'a pas accès aux variable de sa déscendance
+- Une fonction parent n'a pas accès aux variables de sa descendance
 
 ---
 
 ## Contexte
 
-On parle de **contexte** quand une fonction est  exécutée. Chaque fonction à accès au mot-clé **this**. Ce mot peut représenter plusieurs choses en fonction de son contexte d'éxecution.
+On parle de **contexte** quand une fonction est  exécutée. Chaque fonction a accès au mot-clé **this**. Ce mot peut représenter plusieurs choses en fonction de son contexte d'éxecution.
 
 Dans chaque fonction qui n'appartiens pas à un objet (donc "method" exclus), **this** représente l'objet **window**, sauf que le contexte de la fonction est changé volontairement.
 
@@ -62,11 +62,11 @@ var singleHello = woman.child.hello;
 // maintenant "singleHello" contient la valeur de "woman.child.hello", donc, une fonction
 
 singleHello();
-// ceci affichera "undefined" car "singleHello()" est  exécutée sans contexte,
-// donc son "this" c'est l'objet window. Sur l'objet window on a pas de propriété "firstname"
+// ceci affichera "undefined" car "singleHello()" est exécutée sans contexte,
+// donc son "this" c'est l'objet window. Sur l'objet window on n'a pas de propriété "firstname"
 ```
 
-A noter : même quand vous êtes dans une fonction enfant / sous-fonction, si une fonction est  exécutée sans contexte, son "this" c'est l'objet window
+À noter : même quand vous êtes dans une fonction enfant / sous fonction, si une fonction est  exécutée sans contexte, son "this" c'est l'objet window
 
 ### Changer de contexte
 
