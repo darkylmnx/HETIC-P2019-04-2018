@@ -25,7 +25,7 @@ Les fonctions peuvent aussi être des expressions quand elles sont stockées ou 
 Tout ce qui est entre parenthèses est évalué en premier comme en mathématiques.
 
 
-## Expression booléennes
+## Expressions booléennes
 
 On peut user de cette notion avec les opérateurs booléens.
 
@@ -41,14 +41,15 @@ var result = "" || 0 || null;
 // result vaut : null : car c'est la dernière valeur testée et donc renvoyée même si elle est fausse
 ```
 
-Dans une suite de booléens séparés par des `&&` (ET logique), l'expression s'arrête à la dernière valeur **truthy** ou la première des valeurs **falsy** si il y en a au moins une **falsy**.
+Dans une suite de booléens séparés par des `&&` (ET logique), l'expression s'arrête à la dernière valeur **truthy** ou la première des valeurs **falsy** s'il y en a au moins une **falsy**.
 
 ```javascript
 var result = null && "1" && false && 5 && 0;
 // result vaut : null : car c'est la première valeur falsy rencontrée
 
 var result = "1" && "Ariel" && 5;
-// result vaut : 5 : car c'est la dernière valeur testée et donc renvoyée vu que toutes les valeurs sont truthy
+// result vaut : 5 : car c'est la dernière valeur testée et donc 
+// renvoyée vu que toutes les valeurs sont truthy
 ```
 
 Ces expressions sont très pratiques pour donner une valeur par défaut par exemple.
@@ -59,7 +60,9 @@ function hello(name, greeting) {
     return greeting + ', ' + name;
 }
 
-// "greeting" vaut "bonjour" si il n'est pas passé car, ne pas le passer rend greeting "undefined" et donc l'expression "undefined || 'Bonjour'" suit la règle des OU.
+// "greeting" vaut "bonjour" s'il n'est pas passé car, ne pas le passer
+// rend greeting "undefined" et donc l'expression "undefined || 'Bonjour'" 
+// suit la règle des OU.
 ```
 
 ```javascript
@@ -71,7 +74,9 @@ function hello(doAltert) {
     return message;
 }
 
-// si doAltert vaut "true" ou quelque chose de truthy, l'expression "doAltert && alert(message)" donnera "true && alert(message)" et donc fera un alert car il testera la 2ème valeur.
+// si doAltert vaut "true" ou quelque chose de truthy
+// l'expression "doAltert && alert(message)" donnera "true && alert(message)"
+// et donc fera un alert car il testera la 2ème valeur.
 ```
 
 Pour connaître les valeurs falsy et truthy
