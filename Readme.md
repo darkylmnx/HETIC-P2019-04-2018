@@ -5,6 +5,8 @@
 - [Closure et IIFE](Closure.md)
 - Prototype
 - Ajouter des fonctions aux objets natifs
+- [TD : Emitter Pattern](Emitter.md)
+- [TP : Router Frontend](Router.js)
 
 ## Comprendre le repaint et reflow
 - https://www.youtube.com/watch?v=SmE4OwHztCc

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <a href="/about" class="router-link">lien 1</a>
+        <a href="" class="router-link">lien 2</a>
+        <a href="" class="router-link">lien 3</a>
+        <a href="/yeah" class="router-link">lien 4</a>
+        <a href="" class="router-link">lien 5</a>
+        <a href="toto" class="router-link">lien 6</a>
+    </nav>
+    
+    <script src="router.js"></script>
+    <script>
+        Router
+        .on('yeah', function() {
+            console.log('yeah')
+        })
+        .on('/toto', function() {
+            console.log('toto')
+        })
+        .start();
+    </script>
+
+</body>
+</html>
