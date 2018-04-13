@@ -2,15 +2,15 @@
 
 ---
 
-Ajouter des "methods" (fonctions) aux objets natifs peut-être intéressant pour 2 raisons : 
+Ajouter des "methods" (fonctions) aux objets natifs peut être intéressant pour 2 raisons : 
 - Comprendre comment les objets natif fonctionnent
-- Créer des polyfill
+- Créer des polyfills
 
 ## Comment fait-on ?
 
 Chaque objet natif a un **prototype**, c'est le prototype qui permet aux objets d'hériter de choses. Il suffit donc de se plugger dessus.
 
-Disons que l'ont veut sur l'objet string une fonction qui permet de répéter la chaîne.
+Disons que l'on veut sur l'objet string une fonction qui permet de répéter la chaîne.
 
 ```javascript
 if (typeof String.prototype.repeat !== 'function') {
