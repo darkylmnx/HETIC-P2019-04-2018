@@ -4,9 +4,22 @@
 - [Scope et Contexte](Scope.md)
 - [Closure et IIFE](Closure.md)
 - Prototype
-- Ajouter des fonctions aux objets natifs
+- [Ajouter des fonctions aux objets natifs](AddToNative.md)
 - [TD : Emitter Pattern](EmitterPattern.md)
 - [TP : Router Frontend](Router.js)
+
+
+## ES6
+- https://css-tricks.com/lets-learn-es2015/
+- https://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582
+- https://babeljs.io/learn-es2015/
+- transpiler / tester : https://babeljs.io/repl/
+
+## De bonnes ressources pour continuer à apprendre le JS en profondeur
+- https://www.codeschool.com/courses/javascript-best-practices
+- https://github.com/getify/You-Dont-Know-JS
+- http://jstherightway.org/
+- https://johnresig.com/apps/learn/
 
 ## Comprendre le repaint et reflow
 - https://www.youtube.com/watch?v=SmE4OwHztCc
