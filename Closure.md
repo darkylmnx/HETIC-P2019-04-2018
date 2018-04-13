@@ -4,7 +4,7 @@
 
 Une closure est une fonction enfant ayant accès à au moins une variable de sa fonction parente quand celle-ci est exécutée.
 
-Les closures sont en général créée, pour règler les problèmes liés aux scopes globaux.
+Les closures sont en général créées, pour régler les problèmes liés aux scopes globaux.
 
 ```javascript
 $btns = docment.querySelectorAll('button');
@@ -15,7 +15,7 @@ for (var i = 0; i < $btns.length; i++) {
     });
 }
 
-// ici, nous allons avoir un soucis, comme la boucle se termine assez vite
+// ici, nous allons avoir un souci, comme la boucle se termine assez vite
 // au moment où l'utilisateur cliquera sur n'importe quel bouton
 // "i" vaudra déjà la dernière itération de la boucle, donc chaque bouton
 // a un "i" faussé, une closure peut règler ça
@@ -37,7 +37,7 @@ for (var i = 0; i < $btns.length; i++) {
             alert(index);
         });
 
-        où index fait référence au "i" passé pendant l'exécution de la fonction parent
+        où "index" fait référence au "i" passé pendant l'exécution de la fonction parent
     */
 }
 
@@ -57,7 +57,7 @@ init();
 
 (function(w) {
 
-    // on crée une fonction expression qui peut s'executer toute seule
+    // on crée une fonction expression qui peut s'exécuter toute seule
     // (grâce aux parenthèses)
     // on peut aussi passer des variables du coup
 
@@ -67,6 +67,6 @@ init();
 
 ### À quoi ça sert ?
 
-Cela sert à isole des variables en local pour ne pas qu'elles soient en conflit avec des variables globales.
+Cela sert à isoler des variables en local pour qu'elles ne soient pas en conflit avec des variables globales.
 
 C'est typiquement parfait pour créer sa propre libairie, fw ou tout autre code partageable avec d'autres.
