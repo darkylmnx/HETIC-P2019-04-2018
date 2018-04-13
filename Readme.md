@@ -8,6 +8,11 @@
 - [TD : Emitter Pattern](EmitterPattern.md)
 - [TP : Router Frontend](Router.js)
 
+## Apprendre les Promises vs Callbacks
+- https://www.youtube.com/watch?v=uUZxHkcidps
+- https://www.youtube.com/watch?v=9nwPenviboM
+Une fois que vous comprenez la base, voici une explication très avancée
+- https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html
 
 ## ES6
 - https://css-tricks.com/lets-learn-es2015/
