@@ -10,19 +10,20 @@ En JavaScript, une expression est tout ce qui peut renvoyer un résultat :
 
 ```javascript
 1 + 1 - (5 + 2);
-// OU
+// renvoie -> -5
 5 > 2;
-// OU
+// renvoie -> true
 doThis();
-// OU
-var isEqual = ('5' == 5 ? true : false);
-// OU
+// renvoie -> ce que "return" la fonction (si on l'avait créée)
+var isEqual = ('5' === 5 ? true : false);
+// renvoie -> false
 var hello = function () { };
+// renvoie -> une fonction
 ```
 
-De ce fait, toutes les expressions peuvent être stockées car elles renvoient un résultat vers la gauche. 
+Toutes les expressions peuvent être stockées dans des variables car, elles renvoient un résultat vers la gauche.
 Les fonctions peuvent aussi être des expressions quand elles sont stockées ou mises entre parenthèses.
-Tout ce qui est entre parenthèses est évalué en premier comme en mathématiques.
+Tout ce qui est entre parenthèses est considéré comme une expression et est évalué en premier comme en mathématiques.
 
 
 ## Expressions booléennes
