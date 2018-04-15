@@ -1,9 +1,9 @@
 # Sommaire - JavaScript Avancé
 
 - [Les expressions](Expressions.md)
-- [Scope et Contexte](Scope.md)
-- [Closure et IIFE](Closure.md)
-- Prototype
+- [Scope et Contexte](ScopeAndContext.md)
+- [Closure et IIFE](ClosureAndIIFe.md)
+- [Prototype](Prototype.md)
 - [Ajouter des fonctions aux objets natifs](AddToNative.md)
 - [TD : Emitter Pattern](EmitterPattern.md)
 - [TP : Router Frontend](Router.js)
