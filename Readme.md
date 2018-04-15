@@ -2,7 +2,7 @@
 
 - [Les expressions](Expressions.md)
 - [Scope et Contexte](ScopeAndContext.md)
-- [Closure et IIFE](ClosureAndIIFe.md)
+- [Closure et IIFE](ClosureAndIIFE.md)
 - [Prototype](Prototype.md)
 - [Ajouter des fonctions aux objets natifs](AddToNative.md)
 - [TD : Emitter Pattern](EmitterPattern.md)
