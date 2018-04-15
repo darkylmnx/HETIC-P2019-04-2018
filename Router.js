@@ -149,30 +149,25 @@
     function parsePathParams(path) {
         // Nettoyer le tableau des valeurs vides après le split des caractères "/"
         var pathArguments = cleanArray(path.split('/'));
-        var pathParams = [];
-        
-        pathArguments.forEach(function(arg, index) {
-            // Si le paramètre contient le caractère ':', on sauve sa position et son nom
-            if (arg.indexOf(':') >= 0) {
-                pathParams[index] = arg;
-            }
-        })
 
-        return pathParams;
+        return pathArguments.reduce(function(accumulator, value, index) {
+            if (value.indexOf(':') >= 0) {
+                accumulator.push(index);
+            }
+            return accumulator;
+        }, []);
     }
 
     // Récupérer les paramètres d'un path à partir des paramètres sauvés à l'initialisation de la route
     // (lors de l'exécution de la fonction addRoute / on)
     // routeParameters format ["indexInPath:Integer": "value:String"]
     function getParametersFromPath(path, routeParameters) {
-        var parameters = [];
         var pathSplit = cleanArray(path.split('/'));
 
-        routeParameters.forEach(function(parameter, index) {
-            parameters.push(pathSplit[index]);
-        });
-
-        return parameters;
+        return routeParameters.reduce(function(accumulator, value, index) {
+            accumulator.push(pathSplit[index]);
+            return accumulator;
+        }, []);
     }
 
     // 'test/\(\\w+)\x2F$'
@@ -185,6 +180,7 @@
         pathSplit.forEach(function(param) {
             return param.includes(':') ? reg.push('(\\w+)/') : reg.push(param + '/');
         });
+
         // checks that "String Ends with"
         reg.push('$');
         var regexString = reg.join('');
