@@ -16,7 +16,7 @@ new Game();
 // le "this" : représente l'instance, l'objet créé
 // le return : renvoie l'instance, l'objet crée
 ```
-Pour comprendre les histoires de "this" (contexte), [lisez-ça](ScopeAndContext.md);
+Pour comprendre les histoires de "this" (contexte), [lisez-ça](ScopeAndContext.md).
 
 ## Qu'est-ce que le prototype alors ? Héritage
 
