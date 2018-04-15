@@ -81,10 +81,24 @@
         var hasMatched = false;
         var path = w.location.pathname;
 
+        // Matcher les routes: finissant avec / (e.g '/test/')
+        // et sans / (e.g '/test')
+        if (path[path.length - 1] !== '/') {
+            path += '/';
+        }
+
         routes.forEach(function(route) {
-            if (route.path === path) {
+            // Générer une regex en fonction du path de la route sauvegardée
+            var regex = createRegexFromPath(route.path);
+
+            // Tester la regex obtenue sur le path actuel
+            if (regex.test(path)) {
                 hasMatched = true;
-                route.handler();
+                // Récupérer les paramètres de la route par rapport au path
+                var parameters = getParametersFromPath(path, route.parameters);
+
+                // Exécuter le handler de la route en lui passant les paramètres
+                route.handler.apply(null, parameters);
             }
         });
 
@@ -102,7 +116,7 @@
         } else if (path.length < 1) {
             throw 'PATH_EMPTY';
         } else if (typeof handler !== 'function') {
-            throw 'HANLER_NOT_FUNC';
+            throw 'HANDLER_NOT_FUNC';
         }
 
         // si notre route est une "catch all"
@@ -115,16 +129,69 @@
                 path = '/' + path;
             }
 
+            // Récupérer les paramètres de forme :nom dans le path
+            parameters = parsePathParams(path);
+
             // tout est bon on peut push
             routes.push({
                 path: path,
-                handler: handler
+                handler: handler,
+                parameters: parameters
             });
         }
 
         // je return "this" pour pouvoir chainer sur le router
         // genre : Router.on(...).on(...).start()
         return this;
+    }
+
+    // 
+    function parsePathParams(path) {
+        // Nettoyer le tableau des valeurs vides après le split des caractères "/"
+        var pathArguments = cleanArray(path.split('/'));
+
+        return pathArguments.reduce(function(accumulator, value, index) {
+            if (value.indexOf(':') >= 0) {
+                accumulator.push(index);
+            }
+            return accumulator;
+        }, []);
+    }
+
+    // Récupérer les paramètres d'un path à partir des paramètres sauvés à l'initialisation de la route
+    // (lors de l'exécution de la fonction addRoute / on)
+    // routeParameters format ["indexInPath:Integer": "value:String"]
+    function getParametersFromPath(path, routeParameters) {
+        var pathSplit = cleanArray(path.split('/'));
+
+        return routeParameters.reduce(function(accumulator, value) {
+            accumulator.push(pathSplit[value]);
+            return accumulator;
+        }, []);
+    }
+
+    // 'test/\(\\w+)\x2F$'
+    // '(\\w+)\x2Ftasks/(\\w+)/$'
+    function createRegexFromPath(path) {
+        var pathSplit = cleanArray(path.split('/'));
+        var reg = ['^/'];   
+
+        // Loop on Uri parameters to build regex according to whether parameter is dynamic or static
+        pathSplit.forEach(function(param) {
+            return param.indexOf(':') >= 0 ? reg.push('(\\w+)/') : reg.push(param + '/');
+        });
+
+        // checks that "String Ends with"
+        reg.push('$');
+        var regexString = reg.join('');
+        return RegExp(regexString);
+    }
+
+    // Récupérer un nouveau tableau, dont les valeurs 'vides' ont été supprmé
+    function cleanArray(array) {
+        return array.filter(function(element) { 
+            return element ? true : false
+        });
     }
 
     

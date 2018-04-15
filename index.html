@@ -24,6 +24,9 @@
         .on('/toto', function() {
             console.log('toto')
         })
+        .on('/:id/test', function(id) {
+            console.log('test, ' + id);
+        })
         .start();
     </script>
 
