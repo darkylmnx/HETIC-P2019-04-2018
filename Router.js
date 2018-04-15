@@ -148,7 +148,7 @@
     // 
     function parsePathParams(path) {
         // Nettoyer le tableau des valeurs vides après le split des caractères "/"
-        var pathArguments = cleanArray(path.split("/"));
+        var pathArguments = cleanArray(path.split('/'));
         var pathParams = [];
         
         pathArguments.forEach(function(arg, index) {
@@ -193,7 +193,9 @@
 
     // Récupérer un nouveau tableau, dont les valeurs 'vides' ont été supprmé
     function cleanArray(array) {
-        return array.filter(element => element ? true : false);
+        return array.filter(function(element) { 
+            return element ? true : false
+        });
     }
 
     
