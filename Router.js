@@ -164,8 +164,8 @@
     function getParametersFromPath(path, routeParameters) {
         var pathSplit = cleanArray(path.split('/'));
 
-        return routeParameters.reduce(function(accumulator, value, index) {
-            accumulator.push(pathSplit[index]);
+        return routeParameters.reduce(function(accumulator, value) {
+            accumulator.push(pathSplit[value]);
             return accumulator;
         }, []);
     }
@@ -178,7 +178,7 @@
 
         // Loop on Uri parameters to build regex according to whether parameter is dynamic or static
         pathSplit.forEach(function(param) {
-            return param.includes(':') ? reg.push('(\\w+)/') : reg.push(param + '/');
+            return param.indexOf(':') >= 0 ? reg.push('(\\w+)/') : reg.push(param + '/');
         });
 
         // checks that "String Ends with"
