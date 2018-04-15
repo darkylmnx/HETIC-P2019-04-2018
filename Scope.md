@@ -88,9 +88,12 @@ var singleHello = woman.child.hello;
 singleHello.call(woman.child);
 // ou
 singleHello.apply(woman.child);
-// si on a besoin de passer des paramètres à notre fonction "singleHello"
+
+// si on a besoin de passer des paramètres à notre fonction "singleHello" :
+
 // call : paramètres illimitées
 singleHello.call(woman.child, param1, param2, ...);
+
 // apply : un tableau de paramètres
 singleHello.apply(woman.child, [param1, param2, ...]);
 
