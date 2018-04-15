@@ -153,7 +153,7 @@
         
         pathArguments.forEach(function(arg, index) {
             // Si le paramètre contient le caractère ':', on sauve sa position et son nom
-            if (arg.includes(':')) {
+            if (arg.indexOf(':') >= 0) {
                 pathParams[index] = arg;
             }
         })
