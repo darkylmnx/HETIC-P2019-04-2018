@@ -8,6 +8,9 @@
 - [TD : Emitter Pattern](EmitterPattern.md)
 - [TP : Router Frontend](Router.js)
 
+## List de TP pour vous entraîner
+- [Idées de TP / Exercices front-end](TrainAndGetBetter.md)
+
 ## Apprendre les Promises vs Callbacks
 - https://www.youtube.com/watch?v=uUZxHkcidps
 - https://www.youtube.com/watch?v=9nwPenviboM
