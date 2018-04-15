@@ -65,6 +65,9 @@ console.log(athena.toto);
 // ni aucun de ses prototypes acêtre n'a la propriété "toto"
 ```
 
+Ce principe s'appelle la chaîne de prototype (le fait que chaque objet remonte l'ascendance pour trouver une info)
+![image](https://user-images.githubusercontent.com/1426357/38781730-0f956dec-40ea-11e8-9e17-bafcb6bdcbde.png)
+
 ## Pour aller plus loin sur les objets et les fonctions
 - https://www.grafikart.fr/formations/debuter-javascript/prototype
 - https://www.w3schools.com/js/js_function_definition.asp
