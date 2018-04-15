@@ -15,7 +15,7 @@
         <a href="toto" class="router-link">lien 6</a>
     </nav>
     
-    <script src="router.js"></script>
+    <script src="http://localhost:3000/router.js"></script>
     <script>
         Router
         .on('yeah', function() {
@@ -23,6 +23,9 @@
         })
         .on('/toto', function() {
             console.log('toto')
+        })
+        .on('/:id/test', function(id) {
+            console.log('test, ' + id);
         })
         .start();
     </script>
