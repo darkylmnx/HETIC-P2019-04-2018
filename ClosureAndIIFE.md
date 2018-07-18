@@ -7,7 +7,7 @@ Une closure est une fonction enfant ayant accès à au moins une variable de sa 
 Les closures sont en général créées, pour régler les problèmes liés aux scopes globaux.
 
 ```javascript
-$btns = docment.querySelectorAll('button');
+$btns = document.querySelectorAll('button');
 
 for (var i = 0; i < $btns.length; i++) {
     $btns[i].addEventListener('click', function() {
